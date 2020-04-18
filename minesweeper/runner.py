@@ -184,8 +184,8 @@ while True:
             if move is None:
                 move = ai.make_random_move()
                 if move is None:
-                    flags = ai.mines.copy()
                     print("No moves left to make.")
+                    flags = ai.mines.copy()
                 else:
                     print("No known safe moves, AI making random move.")
             else:
@@ -218,5 +218,6 @@ while True:
             nearby = game.nearby_mines(move)
             revealed.add(move)
             ai.add_knowledge(move, nearby)
+            flags = ai.mines.copy()
 
     pygame.display.flip()
